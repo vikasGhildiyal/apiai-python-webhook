@@ -19,7 +19,14 @@ def webhook():
     print("Request:")
     print(json.dumps(req, indent=4))
 
-    res = processRequest(req)
+    #res = processRequest(req)
+    res={
+        "speech": "cold",
+        "displayText": "cold",
+        "data": {"slack": slack_message, "facebook": facebook_message},
+        # "contextOut": [],
+        "source": "apiai-weather-webhook-sample"
+    }
 
     res = json.dumps(res, indent=4)
     # print(res)
